@@ -3,7 +3,7 @@
 #
 
 set output 'residuals.png'
-set terminal png giant
+set terminal png large
 #set output 'residuals.eps'
 #set term postscript color 20 # color
 #set term postscript 20       # black and white
@@ -38,11 +38,11 @@ plot \
      "logs/k_0" \
      title "k_0" with lines linewidth 2 \
      , \
-     "logs/epsilon_0" \
-     title "epsilon_0" with lines linewidth 2
+     "logs/omega_0" \
+     title "omega_0" with lines linewidth 2
 
 set output 'probes.png'
-set terminal png giant
+set terminal png large
 #set output 'probes.eps'
 #set term postscript color 20 # color
 #set term postscript 20       # black and white

@@ -23,7 +23,7 @@ print "arg3: $3"
 print "CS: ",CS
 
 set output 'U$0.png'
-set terminal png giant
+set terminal png large
 #set output 'U$0.eps'
 #set term postscript color 20  # color
 #set term postscript 20        # black and white
@@ -49,15 +49,15 @@ set pointsize 2
 #
 plot \
      "../../../measurements/Re30000Sw060AxialMean" \
-     using (abs(column(1))):(column(CS)) title "Measured U" with points linewidth 8 \
+     using (abs(column(1))):(column(CS)) title "Measured U" with points linewidth 2 \
      , \
      "../../../measurements/Re30000Sw060TangentialMean" \
-     using (abs(column(1))):(abs(column(CS))) title "Measured W" with points linewidth 8 \
+     using (abs(column(1))):(abs(column(CS))) title "Measured W" with points linewidth 2 \
      , \
      "../sets/$3/Comp$0_U.xy" \
      using (column(1)/$1):($$4)\
-     title "$2, U" with lines linewidth 8 \
+     title "$2, U" with lines linewidth 2 \
      , \
      "../sets/$3/Comp$0_U.xy" \
      using (column(1)/$1):(-$$2) \
-     title "$2, W" with lines linewidth 8 \
+     title "$2, W" with lines linewidth 2 \
