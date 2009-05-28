@@ -1,0 +1,13 @@
+#
+# Automatic post processing by Hakan Nilsson
+#
+
+call "compareU.gplt" "025" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "050" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "075" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "100" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "150" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "200" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "300" "0.04925" "DAEsimpleFoam" "10000"
+call "compareU.gplt" "400" "0.04925" "DAEsimpleFoam" "10000"
+

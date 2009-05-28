@@ -1,0 +1,17 @@
+Do automatic post-processing by doing the following:
+(this example uses time step 10000. To use another time step
+modify the -time for sample, and modify in compareAll.gplt)
+
+sample -case .. -time 10000
+gnuplot compareAll.gplt
+mozilla file://$PWD/compareAll.html
+
+To plot the status of the current run, do the following:
+(This example assumes that you have a log file in your case directory)
+foamLog ../log
+gnuplot plotStatus.gplt
+mozilla file://$PWD/plotStatus.html
+
+The development of these files was done by:
+Hakan Nilsson, Chalmers University of Technology, Sweden
+

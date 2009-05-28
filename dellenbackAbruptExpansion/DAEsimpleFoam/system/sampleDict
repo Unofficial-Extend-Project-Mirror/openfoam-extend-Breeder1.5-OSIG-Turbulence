@@ -1,0 +1,105 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.5                                   |
+|   \\  /    A nd           | Web:      http://www.OpenFOAM.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      sampleDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+interpolationScheme cellPoint;
+//interpolationScheme cellPointFace;
+//interpolationScheme cell;
+
+//setFormat     xmgr;
+//setFormat     gnuplot;
+setFormat     raw;
+//setFormat     jplot;
+
+sets
+(
+    Comp025 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.012695);
+        end             (0 0 0.012695);
+        nPoints         100;
+    }
+    Comp050 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.02539);
+        end             (0 0 0.02539);
+        nPoints         100;
+    }
+    Comp075 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.038085);
+        end             (0 0 0.038085);
+        nPoints         100;
+    }
+    Comp100 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.05078);
+        end             (0 0 0.05078);
+        nPoints         100;
+    }
+    Comp150 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.07617);
+        end             (0 0 0.07617);
+        nPoints         100;
+    }
+    Comp200 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.10156);
+        end             (0 0 0.10156);
+        nPoints         100;
+    }
+    Comp300 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.15234);
+        end             (0 0 0.15234);
+        nPoints         100;
+    }
+    Comp400 //Resulting file name
+    {
+        type            uniform;
+        axis            y;         //x-axis in plot
+        start           (0 0.0492 0.20312);
+        end             (0 0 0.20312);
+        nPoints         100;
+    }
+);
+
+surfaces
+();
+
+fields          
+(
+    U
+    p
+    k
+    omega
+);
+
+// ************************************************************************* //
