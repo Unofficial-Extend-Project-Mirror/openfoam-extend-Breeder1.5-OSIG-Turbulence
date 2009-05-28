@@ -1,0 +1,63 @@
+#
+# Automatic post processing by Hakan Nilsson
+#
+# $0: 1st argument, position
+# $1: 3st argument, radius at cross-section
+# $2: 4rd argument, case name
+# $3: 5th argument, time of sample
+#
+
+if ($0==025) CS=4
+if ($0==050) CS=5;
+if ($0==075) CS=6;
+if ($0==100) CS=7;
+if ($0==150) CS=8;
+if ($0==200) CS=9;
+if ($0==300) CS=10;
+if ($0==400) CS=11;
+
+print "arg0: $0"
+print "arg1: $1"
+print "arg2: $2"
+print "arg3: $3"
+print "CS: ",CS
+
+set output 'U$0.png'
+set terminal png giant
+#set output 'U$0.eps'
+#set term postscript color 20  # color
+#set term postscript 20        # black and white
+#Enhanced Metafile Format, for vectorized MS Win32 plots:
+#set terminal emf monochrome dashed 'Times' 20
+#set output 'U$0.emf'
+
+set autoscale
+set noarrow
+set nolabel
+set nogrid
+set grid
+
+set xlabel 'Centerline (0) to wall (1)'
+set ylabel 'U (m/s)'
+set title 'Section $0'
+set xrange [0:1]
+#set xtics 0,0.1,1
+set yrange [-0.2:0.6]
+#set ytics -0.2,0.1,0.6
+set pointsize 2
+
+#
+plot \
+     "../../../measurements/Re30000Sw060AxialMean" \
+     using (abs(column(1))):(column(CS)) title "Measured U" with points linewidth 2 \
+     , \
+     "../../../measurements/Re30000Sw060TangentialMean" \
+     using (abs(column(1))):(abs(column(CS))) title "Measured W" with points linewidth 2 \
+     , \
+     "../sets/$3/Comp$0_U_UMean.xy" \
+     using (column(1)/$1):($$4)\
+     title "$2, U" with lines linewidth 2 \
+     , \
+     "../sets/$3/Comp$0_U_UMean.xy" \
+     using (column(1)/$1):(-$$2) \
+     title "$2, W" with lines linewidth 2 \

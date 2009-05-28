@@ -1,0 +1,2 @@
+Run using:
+m4 -P blockMeshDictGyllenramNilssonTopoStraightHighRe.m4 > blockMeshDict

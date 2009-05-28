@@ -1,0 +1,50 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.5                                   |
+|   \\  /    A nd           | Web:      http://www.OpenFOAM.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      k;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+//Turbulence inlet boundary condition:
+//R ~ 0.025
+//lt = 0.1*R = 0.0025
+//Ub = 0.45203569566225
+//k = 3/2(Ub*0.1)^2 = 0.003065044 (TI = 10%)
+//omega = k^.5/(0.09*lt) = 246.057066644
+//epsilon = k^1.5/lt = 0.067875816
+//nut/nu = k/(omega*nu) = 0.09*k^2/(epsilon*nu) = 16.2799958
+
+internalField   uniform 0.003065044;
+
+boundaryField
+{
+    inlet           
+    {
+        type            fixedValue;
+        value           uniform 0.003065044;
+    }
+
+    outlet          
+    {
+        type            zeroGradient;
+    }
+
+    walls
+    {
+        type            zeroGradient;
+    }
+
+}
+
+// ************************************************************************* //

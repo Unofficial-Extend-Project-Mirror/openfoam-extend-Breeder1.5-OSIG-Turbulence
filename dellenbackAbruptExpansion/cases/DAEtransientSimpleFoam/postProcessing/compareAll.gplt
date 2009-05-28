@@ -1,0 +1,22 @@
+#
+# Automatic post processing by Hakan Nilsson
+#
+
+#call "compareUMean.gplt" "025" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "050" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "075" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "100" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "150" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "200" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "300" "0.04925" "DAEtransientSimpleFoam" "16.8"
+#call "compareUMean.gplt" "400" "0.04925" "DAEtransientSimpleFoam" "16.8"
+
+call "compareU.gplt" "025" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "050" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "075" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "100" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "150" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "200" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "300" "0.04925" "DAEtransientSimpleFoam" "16.8"
+call "compareU.gplt" "400" "0.04925" "DAEtransientSimpleFoam" "16.8"
+

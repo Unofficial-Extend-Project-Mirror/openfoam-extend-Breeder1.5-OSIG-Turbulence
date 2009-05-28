@@ -1,0 +1,123 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.5                                   |
+|   \\  /    A nd           | Web:      http://www.OpenFOAM.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     transientSimpleFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         16.8;
+
+deltaT          2e-3;
+
+writeControl    timeStep;
+
+writeInterval   300;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression compressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+functions
+(
+    probes1
+    {
+        // Type of functionObject
+        type probes;
+
+        // Where to load it from (if not already in solver)
+        functionObjectLibs ("libsampling.so");
+
+        // Locations to be probed. runTime modifiable!
+        probeLocations
+        (
+            (0.0491087 0 0.0126626) //Z=0.25*D nearestCellCenter
+            (0.0491087 0 0.0257198) //Z=0.5*D nearestCellCenter
+            (0.0491087 0 0.0374868) //Z=0.75*D nearestCellCenter
+            (0.0491087 0 0.0507053) //Z=1*D nearestCellCenter
+            (0.0491087 0 0.102426 ) //Z=2*D nearestCellCenter
+        );
+
+        // Fields to be probed. runTime modifiable!
+        fields
+        (
+            p
+            //pMean
+        );
+    }
+
+    fieldAverage1
+    {
+        // Type of functionObject
+        type fieldAverage;
+
+        // Where to load it from (if not already in solver)
+        functionObjectLibs ("libfieldAverage.so");
+
+        // Fields to be  averaged - runTime modifiable
+        fields
+        (
+            U
+            {
+                mean            on;
+                prime2Mean      off;
+                base            time;
+            }
+            p
+            {
+                mean            on;
+                prime2Mean      off;
+                base            time;
+            }
+            k
+            {
+                mean            on;
+                prime2Mean      off;
+                base            time;
+            }
+//            epsilon
+//            {
+//                mean            off;
+//                prime2Mean      off;
+//                base            time;
+//            }
+            omega
+            {
+                mean            on;
+                prime2Mean      off;
+                base            time;
+            }
+        );
+    }
+);
+
+// To access the profile1DfixedValue boundary condition
+libs ("libOpenFoamTurbo.so");
+
+// ************************************************************************* //
