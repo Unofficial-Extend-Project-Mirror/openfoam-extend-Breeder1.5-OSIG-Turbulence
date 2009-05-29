@@ -1,0 +1,22 @@
+#!/bin/bash
+
+###--------------------making the mesh--------------------###
+###---un-comment the line with the mesh you want to use---###
+
+# High-Re (Wall-Function) mesh:
+m4 -P constant/polyMesh/blockMeshDictGyllenramNilssonTopoStraightHighRe.m4 > constant/polyMesh/blockMeshDict
+
+# Low-Re 'straight' mesh:
+#m4 -P constant/polyMesh/blockMeshDictGyllenramNilssonTopoStraightLowRe.m4 > constant/polyMesh/blockMeshDict
+
+# Low-Re 'expanding' mesh:
+#m4 -P constant/blockMeshDictGyllenramNilssonTopoLowRe.m4 > constant/polyMesh/blockMeshDict
+
+blockMesh
+
+###---------------launching the computations--------------###
+
+rm -rf 0
+cp -r 0_orig 0
+transientSimpleFoam >> log 
+
