@@ -1,0 +1,13 @@
+The original experimental results were kindly provided by Dellenback, for use in this OpenFOAM case-study.
+
+Unfortunately, the data was only available on paper, which is what can be found in the scanned dellenbackData.pdf file.
+
+An attempt to automatically extract (OCR) the data in the pdf file to a text file can be found in the dellenbackData.OCR file. This file can be used as a basis for generating the final files for comparisons.
+
+The data that has been extracted and checked thoroughly are available as groups of four files for each operating condition:
+
+Re?????Sw***AxialMean
+Re?????Sw***AxialRMS
+Re?????Sw***TangentialMean
+Re?????Sw***TangentialRMS
+where '?????' and '***' refer to the Reynolds number and swirl number for each case.
