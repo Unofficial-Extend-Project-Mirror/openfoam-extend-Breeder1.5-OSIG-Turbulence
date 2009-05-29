@@ -60,14 +60,6 @@ solvers
     };
 }
 
-PISO
-{
-    nCorrectors     4;
-    nNonOrthogonalCorrectors 0;
-    pRefCell        0;
-    pRefValue       0;
-}
-
 SIMPLE
 {
     nNonOrthogonalCorrectors 0;
