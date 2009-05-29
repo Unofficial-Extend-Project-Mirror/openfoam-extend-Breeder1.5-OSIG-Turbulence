@@ -12,6 +12,8 @@ m4 -P constant/polyMesh/blockMeshDictGyllenramNilssonTopoStraightHighRe.m4 > con
 # Low-Re 'expanding' mesh:
 #m4 -P constant/blockMeshDictGyllenramNilssonTopoLowRe.m4 > constant/polyMesh/blockMeshDict
 
+blockMesh
+
 ###---------------launching the computations--------------###
 
 rm -rf 0
