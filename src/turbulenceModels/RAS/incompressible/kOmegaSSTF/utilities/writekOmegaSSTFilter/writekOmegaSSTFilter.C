@@ -68,8 +68,9 @@ int main(int argc, char *argv[])
 #   include "createFields.H"
 
         nutFilter.internalField() =
-            reinterpret_cast<turbulenceModels::kOmegaSSTF*>
+            reinterpret_cast<incompressible::RASModels::kOmegaSSTF*>
             (turbulence.operator->())->filter();
+            //reinterpret_cast<turbulenceModels::kOmegaSSTF*>
 
         nutFilter.write();
 

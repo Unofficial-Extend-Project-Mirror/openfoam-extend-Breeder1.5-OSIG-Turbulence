@@ -23,10 +23,10 @@ License
     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 Class
-    Foam::incompressible::RASModels::kOmegaSST
+    Foam::incompressible::RASModels::kOmegaSSTF
 
 Description
-    This is the original kOmegaSST model (from OpenFOAM-1.4)
+    This is the original kOmegaSST model (from OpenFOAM-1.5)
     with the Gyllenram and Nilsson filter, described in
     Gyllenram, W.; Nilsson, H.: Design and Validation of a Scale-Adaptive
     Filtering Technique for LRN Turbulence Modeling of Unsteady Flow.
@@ -53,6 +53,9 @@ Description
     Gyllenram, W; Stein, P.; Nilsson, H: Assessment of a hybrid LES/RANS
     turbulence model in unsteady swirling and recirculating flow.
     Submitted for journal publication 2008.
+
+    Nilsson, H: The Dellenback Abrupt Expansion OpenFOAM case-study, and the
+    kOmegaSSTF turbulence model. 4th OpenFOAM Workshop, Montreal, June 1-4, 2009
 
 Authors (in OpenFOAM)
     Hakan Nilsson, Chalmers
