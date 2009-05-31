@@ -70,7 +70,6 @@ int main(int argc, char *argv[])
         nutFilter.internalField() =
             reinterpret_cast<incompressible::RASModels::kOmegaSSTF*>
             (turbulence.operator->())->filter();
-            //reinterpret_cast<turbulenceModels::kOmegaSSTF*>
 
         nutFilter.write();
 
