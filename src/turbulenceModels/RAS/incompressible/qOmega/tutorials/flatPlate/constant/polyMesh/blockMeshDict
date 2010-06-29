@@ -1,0 +1,79 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.4                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           dictionary;
+    object          blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 4.0;
+
+vertices        
+(
+    (0 0     0)
+    (1 0     0)
+    (1 0.125 0)
+    (0 0.125 0)
+    (0 0     0.00666252)
+    (1 0     0.00666252)
+    (1 0.125 0.00666252)
+    (0 0.125 0.00666252)
+);
+
+blocks          
+(
+    hex (0 1 2 3 4 5 6 7)   // vertex numbers
+    (64 44 1)               // number of cells in each direction
+    simpleGrading (1 1948.323 1)   // cell expansion ratios
+);
+
+edges           
+(
+);
+
+patches         
+(
+    empty frontAndBack 
+    (
+        (0 3 2 1)
+        (4 5 6 7)
+    )
+    patch inlet 
+    (
+        (0 4 7 3)
+    )
+    patch outlet 
+    (
+        (1 2 6 5)
+    )
+    wall solid 
+    (
+        (0 1 5 4)
+    )
+    patch top 
+    (
+        (2 3 7 6)
+    )
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

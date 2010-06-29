@@ -1,0 +1,21 @@
+The grid is designed to have a y+ value of approximately 1 and
+a stretching ratio of about 1.2 normal to the plate for a
+Reynolds number based on plate length of 4e+6.
+
+The boundary layer transitions from laminar to turbulent in the
+vicinity of Rex = 1e+6.
+
+The boundary layer at the end of the plate is compared with
+its expected behavior in a series of gnuplot scripts included in
+the gnuplot/ subdirectory; e.g.
+
+gnuplot> load 'gnuplot/up.q'
+
+The files are as follows:
+
+up.q      velocity profile as u+ vs. y+ (log-linear)
+qp.q      square root of turbulence kinetic energy as q+ vs. y+ (log-linear)
+omega.q   square root of frequency as omega+ vs. y+ (log-log)
+cf.q      skin friction coefficient along the plate vs. Rex (log-log)
+resid.q   residual histories
+

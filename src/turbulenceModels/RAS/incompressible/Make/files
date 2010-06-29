@@ -1,3 +1,4 @@
 kOmegaSSTF/kOmegaSSTF.C
+qOmega/qOmega.C
 
 LIB = $(FOAM_USER_LIBBIN)/libaddedIncompressibleRASModels
